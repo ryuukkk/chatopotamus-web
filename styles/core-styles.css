@@ -74,13 +74,26 @@
       margin: 0 0 2.5rem 0;
       color: #fff;
     }
+    .top-bar a {
+      display: flex;
+      align-items: center; /* Ensures vertical center alignment of all items */
+      justify-content: center; /* Center content horizontally */
+      gap: 0.5rem; /* Optional: adds space between text and icon */
+  }
+  
+  .top-bar a svg {
+      height: 1em; /* Ensures the icon size matches the text size */
+      width: auto; /* Maintains the aspect ratio of the icon */
+      vertical-align: middle; /* Helps align better if flex properties fall short */
+  }
+  
     #hero-1619 .cs-button-solid {
       font-size: 1rem;
       /* 46px - 56px */
       line-height: clamp(2.875rem, 5.5vw, 3.5rem);
       text-decoration: none;
       font-weight: 700;
-      margin: 0;
+      margin: 1rem;
       color: #fff;
       padding: 0 1.5rem;
       background-color: var(--primary);
@@ -224,7 +237,7 @@
   /* Large Desktop Parallax Effect - 100px */
   @media only screen and (min-width: 100rem) {
     #hero-1619 .cs-background {
-      background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/meeting7.jpg");
+      background: url("../images/placeholder-alexa.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -236,3 +249,40 @@
     }
   }
                                   
+  .top-bar {
+    width: 100%;
+    background-color: var(--primary); /* Using the primary color variable from your theme */
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.top-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 80rem; /* Adjust based on your layout */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.top-menu li {
+    padding: 0 15px;
+}
+
+.top-menu a {
+  text-decoration: none;
+  color: var(--bodyTextColorWhite); /* White text color for readability */
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem; /* Add padding for a better rectangle shape */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and color */
+}
+
+.top-menu a:hover {
+  background-color: var(--bodyTextColorWhite); /* White background on hover */
+  color: var(--primary); /* Text color changes to bar's color */
+  border-radius: 4px; /* Optional: Adds rounded corners to the background */
+}
