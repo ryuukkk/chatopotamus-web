@@ -74,18 +74,66 @@
       margin: 0 0 2.5rem 0;
       color: #fff;
     }
-    .top-bar a {
+  .top-bar a {
       display: flex;
-      align-items: center; /* Ensures vertical center alignment of all items */
+      align-items: right; /* Ensures vertical center alignment of all items */
       justify-content: center; /* Center content horizontally */
       gap: 0.5rem; /* Optional: adds space between text and icon */
   }
   
-  .top-bar a svg {
-      height: 1em; /* Ensures the icon size matches the text size */
-      width: auto; /* Maintains the aspect ratio of the icon */
-      vertical-align: middle; /* Helps align better if flex properties fall short */
-  }
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures elements are spaced between start and end */
+    padding: 0.5rem 1rem;
+    background-color: var(--primary);
+}
+
+.top-bar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Ensures logo and menu are on opposite ends */
+}
+
+.top-bar-logo img {
+    height: 100%; /* Adjust this value based on the actual height of your top-bar */
+    width: auto; /* Maintains the aspect ratio of the logo */
+    max-height: 50px; /* Example max height, adjust as necessary */
+}
+
+.top-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Centers the links vertically in the navigation bar */
+    justify-content: flex-end; /* Aligns menu items to the right */
+    flex-grow: 1; /* Allows the menu to expand and push to the right */
+}
+
+.top-menu li {
+    margin-left: 10px;
+}
+
+.top-menu a {
+    color: var(--bodyTextColorWhite);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.top-menu a svg {
+    margin-left: 5px;
+}
+
+.top-bar a svg {
+    height: 1em; /* Ensures the icon size matches the text size */
+    width: auto; /* Maintains the aspect ratio of the icon */
+    vertical-align: middle; /* Helps align better if flex properties fall short */
+}
+
   
     #hero-1619 .cs-button-solid {
       font-size: 1rem;
@@ -251,7 +299,7 @@
                                   
   .top-bar {
     width: 100%;
-    background-color: var(--primary); /* Using the primary color variable from your theme */
+    background-color: var(--secondary); /* Using the primary color variable from your theme */
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -285,4 +333,93 @@
   background-color: var(--bodyTextColorWhite); /* White background on hover */
   color: var(--primary); /* Text color changes to bar's color */
   border-radius: 4px; /* Optional: Adds rounded corners to the background */
+}
+
+.cs-footer {
+  background-color: var(--secondary); /* Secondary color for footer background */
+  color: var(--bodyTextColorWhite); /* White text for readability */
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+.cs-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.footer-section {
+  margin: 1rem;
+}
+
+.footer-section ul {
+  list-style-type: none;  /* Continues to remove bullet points */
+  padding: 0;  /* Keeps padding reset */
+  margin: 1rem 0;  /* Maintains vertical margin */
+  text-decoration: none;
+  color: var(--secondaryLight);
+}
+
+.footer-section li {
+  margin-bottom: 0.2rem;  /* Maintains space between list items */
+  padding: 0.1rem 0;  /* Minimal padding for clickable area */
+  text-decoration: none;
+  color: var(--secondaryLight);
+}
+
+.footer-section a {
+  color: var(--bodyTextColorWhite);  /* Keeps text color white */
+  text-decoration: none;  /* Ensures no underline */
+  transition: color 0.3s ease, background-color 0.3s ease;  /* Smooth transitions for hover effects */
+  padding: 0.2rem 0.3rem;  /* Adjusts padding for touch targets and appearance */
+  display: inline-block;  /* Ensures padding and margin affect the link correctly */
+  font-size: 0.9rem;  /* Smaller font size for compact appearance */
+}
+
+.footer-section a:hover, .footer-section a:focus {
+  text-decoration: none;  /* Ensures no underline on hover/focus */
+  background-color: var(--primaryLight);  /* Light primary color for hover background with slight change */
+  color: var(--secondaryLight);
+  border-radius: 4px;  /* Maintains rounded corners for a modern look */
+}
+
+.cs-footer {
+  background-color: var(--secondary); /* Uses the secondary color for the footer */
+  color: var(--bodyTextColorWhite); /* Keeps text color white for contrast */
+  padding: 0.1rem; /* Reduced padding for a more compact footer */
+  font-size: 0.9rem; /* Smaller text throughout the footer */
+}
+
+
+.footer-section h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.footer-section p,
+.footer-section a {
+  margin-bottom: 0.25rem;
+  color: var(--bodyTextColorWhite);
+  text-decoration: none;
+}
+
+.cs-footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  border-top: 1px solid var(--bodyTextColorWhite); /* Adds a subtle border */
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .cs-footer-content {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-section {
+      text-align: center;
+      margin: 1rem 0;
+  }
 }
