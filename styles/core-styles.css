@@ -410,6 +410,7 @@
   margin-top: 1rem;
   border-top: 1px solid var(--bodyTextColorWhite); /* Adds a subtle border */
   padding-top: 1rem;
+  font-size: xx-small;
 }
 
 @media (max-width: 768px) {
